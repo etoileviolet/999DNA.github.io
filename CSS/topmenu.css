@@ -1,0 +1,66 @@
+@charset "utf-8";
+    * { outline: 1px solid red;}
+    body{
+      margin: 0px;
+    }
+    a{
+      text-decoration: none;    
+      color: white;
+      }
+    ul{
+      list-style-type: none;
+      padding-left: 0px;
+    }
+    .navbar{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 10px;
+      background-color: #ff80ab;
+    }
+    .navbar .navbar-logo,
+    .navbar .navbar-menu,
+    .navbar .navbar-sns{
+      display: flex;
+    }
+
+    /* GNB 메뉴 */
+    .navbar .navbar-menu li {
+      padding: 8px 12px;
+      border-radius: 10px;
+    }
+
+    .navbar .navbar-menu li:hover {
+      background-color: #ffb2dd;
+      transition: background-color 1s ease;
+    }
+
+
+    .navbar #hamburger{
+      display: none;
+      position:absolute;
+      top:20px; right:20px;
+    }
+    @media screen and (max-width:767px){
+      .navbar,
+      .navbar .navbar-menu {
+        flex-direction: column;
+      }
+      .navbar #hamburger{
+        display: block;
+      }
+      .navbar .navbar-menu,
+      .navbar .navbar-sns{
+        display: none;
+      }
+      .navbar .navbar-logo{
+        align-self: flex-start;
+      }
+      .navbar .navbar-logo.active{
+        align-self: center;
+      }
+      .navbar .navbar-menu.active,
+      .navbar .navbar-sns.active{
+        display: flex;
+      }      
+    }
